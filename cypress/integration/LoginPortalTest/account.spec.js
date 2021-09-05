@@ -5,16 +5,18 @@
 describe('user detail page', ()=> {
     it('1. Check header exists', ()=> {
     cy.visit ('http://localhost:8080/')
-    .viewport("iphone-6")
+
     .get('[placeholder="Enter Username"]').type('SomeUser_name')
     .get('[placeholder="password"]').type('TopSecret1234!')
     .get('.sc-bZQynM').click()
     .get('.sc-bdVaJa > div').contains('Hello SomeName');
     })
 
+    //add a test for "hello undefined"
+
     it('2. Check user name exists', ()=> {
         cy.visit ('http://localhost:8080/')
-        .viewport("iphone-6")
+        
         .get('[placeholder="Enter Username"]').type('SomeUser_name')
         .get('[placeholder="password"]').type('TopSecret1234!')
         .get('.sc-bZQynM').click()
@@ -23,7 +25,7 @@ describe('user detail page', ()=> {
 
     it('3. Check users favourite fruit exists', ()=> {
         cy.visit ('http://localhost:8080/')
-        .viewport("samsung-note9")
+        
         .get('[placeholder="Enter Username"]').type('SomeUser_name')
         .get('[placeholder="password"]').type('TopSecret1234!')
         .get('.sc-bZQynM').click()
