@@ -1,1 +1,4 @@
 /node_modules/
+/dist/
+/cypress/support/
+/cypress/fixtures/
