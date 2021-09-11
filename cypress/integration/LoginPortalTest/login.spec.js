@@ -1,30 +1,29 @@
 /// <reference types="Cypress" />
 
-
-describe('login  page components', ()=> {
+describe('Verify login  page components', ()=> {
 
        //placeholder for title
-    it('Check header exists', () => {
+    it('1. Check header exists', () => {
         cy.visit ('http://localhost:8080/')
         cy.get('body').should('exist');//Ranjani to check
     })
 
-    it('Check enter username field exists', ()=> {
+    it('2. Check enter username field exists', ()=> {
         cy.visit ('http://localhost:8080/')
         cy.get('[placeholder="Enter Username"]').should('exist');
     })
 
-    it('Check enter password field exists', ()=> {
+    it('3. Check enter password field exists', ()=> {
         cy.visit ('http://localhost:8080/')
         cy.get('[placeholder="password"]').should('exist');
     })
     
-    it('Check login button exists', () => {
+    it('4. Check login button exists', () => {
         cy.visit ('http://localhost:8080/')
         cy.get('.sc-bZQynM').should('exist');
     })
 
-    it('Check contact admin text exists', () => {
+    it('5. Check contact admin text exists', () => {
         cy.visit ('http://localhost:8080/')
         cy.get('.sc-ifAKCX > div').should('exist');//Ranjani to add contain
     })
@@ -32,7 +31,7 @@ describe('login  page components', ()=> {
 
     //To check the behaviour of the login portal for incorrect username and password combinations
     
-    it('Check login with incorrect username', ()=> {
+    it('6. Check login with incorrect username', ()=> {
         cy.visit ('http://localhost:8080/')
         cy.get('[placeholder="Enter Username"]').type('dummytre')
         cy.get('[placeholder="password"]').type('test1')
@@ -40,7 +39,7 @@ describe('login  page components', ()=> {
         cy.contains('Incorrect username or bad password').should('exist')
     })
 
-    it('Check login with incorrect password', ()=> {
+    it('7. Check login with incorrect password', ()=> {
         cy.visit ('http://localhost:8080/')
         cy.get('[placeholder="Enter Username"]').type('dummytree')
         cy.get('[placeholder="password"]').type('test')
@@ -50,15 +49,15 @@ describe('login  page components', ()=> {
     })
 
     //To check if the password is masked while entering
-    xit('Check if password field is masked while entering', ()=> {
+    it('8. Check if password field is masked while entering', ()=> {
         cy.visit ('http://localhost:8080/')
-        .get('[placeholder="password"]').type('test1')
-        .contains ('*****') //to check google
+        .get('[placeholder="Enter Username"]').type('dummytree')
+        .get('[placeholder="password"]').type('test1').should('be.hidden')
 
     })
 
     //Successful login and redirection
-    it('Check login succesful and redirection', ()=> {
+    it('9. Check login succesful and redirection', ()=> {
          cy.visit ('http://localhost:8080/')
          cy.get('[placeholder="Enter Username"]').type('dummytree')
          cy.get('[placeholder="password"]').type('test1')
