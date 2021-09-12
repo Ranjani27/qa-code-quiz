@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Verify user detail page attribute exists', ()=> {
+describe('Verify account page attribute exists', ()=> {
     beforeEach(()=>{
         cy.visit ('http://localhost:8080/')
         .get('[placeholder="Enter Username"]').type('Ranjani27')
@@ -31,7 +31,7 @@ describe('Verify user detail page attribute exists', ()=> {
 })
 
 
-describe('Verify user detail page with user details', ()=> {
+describe('Verify account page with user details', ()=> {
     beforeEach(()=>{
         cy.visit ('http://localhost:8080/')
         .get('[placeholder="Enter Username"]').type('SomeUser_name')
@@ -68,7 +68,7 @@ describe('Verify user detail page with user details', ()=> {
 })
 
 
-describe('Verify user detail page without user details', ()=> {
+describe('Verify account page without user details', ()=> {
     beforeEach(()=>{
         cy.visit ('http://localhost:8080/')
         .get('[placeholder="Enter Username"]').type('Ranjani27')
